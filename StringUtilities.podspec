@@ -25,7 +25,8 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  Collection of utilities to work with strings
+  Collection of utilities to work with strings, including regex helpers, MD5
+  wrappers and trimming methods
                    DESC
 
   s.homepage     = "http://visualnacert.com"
@@ -39,7 +40,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "Property of VisualNACert S.L."
+  s.license      = { :type => "Propietary", :file => "LICENSE" }
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -53,7 +54,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "" => "" }
+  s.author             = { "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com" }
   # Or just: s.author    = ""
   # s.authors            = { "" => "" }
   # s.social_media_url   = "http://twitter.com/"
@@ -82,7 +83,7 @@ Pod::Spec.new do |s|
 
   s.source       = {
   	:git => "/Volumes/Soluciones Tecnológicas/Backups/iOS v2/iOS Libs/StringUtilities",
-  	# :tag => "#{s.version}"
+  	:tag => "#{s.version}"
   }
 
 
