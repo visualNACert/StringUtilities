@@ -9,6 +9,4 @@
 #ifndef StringUtilities_h
 #define StringUtilities_h
 
-//#import <CommonCrypto/CommonCrypto.h>
-
 #endif /* StringUtilities_h */
