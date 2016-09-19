@@ -139,6 +139,6 @@ Pod::Spec.new do |s|
   #s.preserve_path = "${PODS_ROOT}/VisualAPI/BridgingHeader.h"
   #s.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => '${PODS_ROOT}/VisualAPI/BridgingHeader.h' }
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency 'CryptoSwift'
+  s.dependency 'CryptoSwift', '~> 0.5.2'
 
 end
