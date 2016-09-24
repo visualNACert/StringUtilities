@@ -1,3 +1,5 @@
+[![Build Status](https://www.bitrise.io/app/d46e720d40bb06a2.svg?token=1ixdj23dbZJgJ3rjHcqkSg&branch=master)](https://www.bitrise.io/app/d46e720d40bb06a2)
+
 # String Utilities
 
 This is a small collection of utilities to work with strings easily, including:
