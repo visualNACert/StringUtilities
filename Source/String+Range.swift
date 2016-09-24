@@ -24,22 +24,42 @@ public extension String {
      - returns: Substring at given range.
      
      */
+    #if swift(>=3)
 	public subscript(range: Range<Int>) -> String {
         precondition(
-            range.startIndex >= 0,
+            range.lowerBound >= 0,
             "Cannot get substring starting from a < 0 index"
         )
-		let start = self.startIndex.advancedBy(range.startIndex)
+		let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
         precondition(
             start < self.endIndex,
             "Desired start index `\(start)` ≥ string length: `\(self.endIndex)`)"
         )
-		let end = start.advancedBy(range.endIndex - range.startIndex)
+		let end = self.characters.index(start, offsetBy: range.upperBound - range.lowerBound)
         precondition(
             end <= self.endIndex,
             "Desired end index `\(end)` ≥ string length: `(\(self.endIndex)`)"
         )
-		return self.substringWithRange(start..<end)
+		return self.substring(with: start..<end)
 	}
+    #else
+    public subscript(range: Range<Int>) -> String {
+        precondition(
+            range.startIndex >= 0,
+            "Cannot get substring starting from a < 0 index"
+        )
+        let start = self.startIndex.advancedBy(range.startIndex)
+        precondition(
+            start < self.endIndex,
+            "Desired start index `\(start)` ≥ string length: `\(self.endIndex)`)"
+        )
+        let end = start.advancedBy(range.endIndex - range.startIndex)
+        precondition(
+            end <= self.endIndex,
+            "Desired end index `\(end)` ≥ string length: `(\(self.endIndex)`)"
+        )
+        return self.substringWithRange(start..<end)
+    }
+    #endif
 
 }

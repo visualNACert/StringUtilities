@@ -15,9 +15,17 @@ class StringRemoveTests: XCTestCase {
         
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
         
-        let resulting = original.stringByRemoving("hitchhiker")
+        #if swift(>=3)
+        
+        let resulting = original.removingOccurrences(of: "hitchhiker")
         
         XCTAssertEqual(original, resulting)
+            
+        #endif
+        
+        let oldResulting = original.stringByRemoving("hitchhiker")
+        
+        XCTAssertEqual(original, oldResulting)
         
     }
     
@@ -25,9 +33,17 @@ class StringRemoveTests: XCTestCase {
         
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
         
-        let resulting = original.stringByRemoving("moment")
+        #if swift(>=3)
+        
+        let resulting = original.removingOccurrences(of: "moment")
         
         XCTAssertEqual(resulting, "For a , nothing happened. Then, after a second or so, nothing continued to happen.")
+            
+        #endif
+        
+        let oldResulting = original.stringByRemoving("moment")
+        
+        XCTAssertEqual(oldResulting, "For a , nothing happened. Then, after a second or so, nothing continued to happen.")
         
     }
     
@@ -35,9 +51,17 @@ class StringRemoveTests: XCTestCase {
         
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
         
-        let resulting = original.stringByRemoving("nothing")
+        #if swift(>=3)
+        
+        let resulting = original.removingOccurrences(of: "nothing")
         
         XCTAssertEqual(resulting, "For a moment,  happened. Then, after a second or so,  continued to happen.")
+            
+        #endif
+        
+        let oldResulting = original.stringByRemoving("nothing")
+        
+        XCTAssertEqual(oldResulting, "For a moment,  happened. Then, after a second or so,  continued to happen.")
         
     }
     
@@ -45,9 +69,17 @@ class StringRemoveTests: XCTestCase {
      
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
         
-        let resulting = original.stringByRemoving(["Douglas", "Adams"])
+        #if swift(>=3)
+        
+        let resulting = original.removingOccurrences(of: ["Douglas", "Adams"])
         
         XCTAssertEqual(original, resulting)
+            
+        #endif
+        
+        let oldResulting = original.stringByRemoving(["Douglas", "Adams"])
+        
+        XCTAssertEqual(original, oldResulting)
         
     }
     
@@ -55,9 +87,17 @@ class StringRemoveTests: XCTestCase {
         
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
         
-        let resulting = original.stringByRemoving(["Arthur", "moment"])
+        #if swift(>=3)
+        
+        let resulting = original.removingOccurrences(of: ["Arthur", "moment"])
         
         XCTAssertEqual(resulting, "For a , nothing happened. Then, after a second or so, nothing continued to happen.")
+            
+        #endif
+        
+        let oldResulting = original.stringByRemoving(["Arthur", "moment"])
+        
+        XCTAssertEqual(oldResulting, "For a , nothing happened. Then, after a second or so, nothing continued to happen.")
         
     }
     
@@ -65,9 +105,17 @@ class StringRemoveTests: XCTestCase {
         
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
         
-        let resulting = original.stringByRemoving(["Then", "moment"])
+        #if swift(>=3)
+        
+        let resulting = original.removingOccurrences(of: ["Then", "moment"])
         
         XCTAssertEqual(resulting, "For a , nothing happened. , after a second or so, nothing continued to happen.")
+            
+        #endif
+        
+        let oldResulting = original.stringByRemoving(["Then", "moment"])
+        
+        XCTAssertEqual(oldResulting, "For a , nothing happened. , after a second or so, nothing continued to happen.")
         
     }
     
@@ -75,9 +123,17 @@ class StringRemoveTests: XCTestCase {
         
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
         
-        let resulting = original.stringByRemoving(["nothing", ","])
+        #if swift(>=3)
+        
+        let resulting = original.removingOccurrences(of: ["nothing", ","])
         
         XCTAssertEqual(resulting, "For a moment  happened. Then after a second or so  continued to happen.")
+            
+        #endif
+        
+        let oldResulting = original.stringByRemoving(["nothing", ","])
+        
+        XCTAssertEqual(oldResulting, "For a moment  happened. Then after a second or so  continued to happen.")
         
     }
     
