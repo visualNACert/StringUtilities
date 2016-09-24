@@ -10,10 +10,8 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "http://visualnacert.com"
-
   s.license      = { :type => "Propietary", :file => "LICENSE" }
-
-  s.author             = { "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com" }
+  s.author       = { "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com" }
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
