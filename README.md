@@ -1,4 +1,4 @@
-[![Build Status](https://www.bitrise.io/app/d46e720d40bb06a2.svg?token=1ixdj23dbZJgJ3rjHcqkSg&branch=master)](https://www.bitrise.io/app/d46e720d40bb06a2) ![platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg) ![platform macOS](https://img.shields.io/badge/platform-macOS-blue.svg) ![swift2 compatible 0.0.5](https://img.shields.io/badge/swift2-0.0.5-brightgreen.svg) ![swift3 compatible](https://img.shields.io/badge/swift3-compatible-brightgreen.svg) ![pod 1.0.0](https://img.shields.io/badge/pod-1.0.0-blue.svg)
+[![Build Status](https://www.bitrise.io/app/d46e720d40bb06a2.svg?token=1ixdj23dbZJgJ3rjHcqkSg&branch=swift-2)](https://www.bitrise.io/app/d46e720d40bb06a2) ![platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg) ![platform macOS](https://img.shields.io/badge/platform-macOS-blue.svg) ![swift2 compatible 0.0.5](https://img.shields.io/badge/swift2-0.0.5-brightgreen.svg) ![swift3 compatible](https://img.shields.io/badge/swift3-compatible-brightgreen.svg) ![pod 0.0.5](https://img.shields.io/badge/pod-0.0.5-blue.svg)
 
 # String Utilities
 
