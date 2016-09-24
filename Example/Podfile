@@ -1,0 +1,9 @@
+
+target 'StringUtilities-macOS' do
+
+	platform :osx, '10.10'
+	use_frameworks!
+
+	pod 'StringUtilities', :path => '../'
+
+end

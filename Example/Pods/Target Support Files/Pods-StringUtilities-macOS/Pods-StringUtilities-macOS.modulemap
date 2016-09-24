@@ -1,0 +1,6 @@
+framework module Pods_StringUtilities_macOS {
+  umbrella header "Pods-StringUtilities-macOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

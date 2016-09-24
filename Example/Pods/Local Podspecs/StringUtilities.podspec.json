@@ -1,0 +1,27 @@
+{
+  "name": "StringUtilities",
+  "version": "0.0.3",
+  "summary": "A collection of utilities to work with strings",
+  "description": "Collection of utilities to work with strings, including regex helpers and\ntrimming methods",
+  "homepage": "http://visualnacert.com",
+  "license": {
+    "type": "Propietary",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Lluís Ulzurrun de Asanza i Sàez": "lulzurrun@visualnacert.com"
+  },
+  "platforms": {
+    "ios": "8.0",
+    "osx": "10.10"
+  },
+  "source": {
+    "git": "/Volumes/Soluciones Tecnológicas/Backups/iOS v2/iOS Libs/StringUtilities",
+    "tag": "0.0.3"
+  },
+  "source_files": [
+    "Source",
+    "Source/**/*.{h,m,swift}"
+  ],
+  "exclude_files": "Source/Exclude"
+}

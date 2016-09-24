@@ -1,6 +1,6 @@
 //
-//  String+regex.swift
-//  Visual
+//  String+Regex.swift
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun on 6/7/16.
 //  Copyright © 2016 VisualNACert. All rights reserved.
@@ -9,12 +9,20 @@
 import Foundation
 
 public extension String {
-
+    
 	/// Cache of regular expressions created.
-	static var regexCache = [String: NSRegularExpression]()
+	private static var regexCache = [String: NSRegularExpression]()
+    
+    /// Clears cache of regular expressions.
+    public func clearRegexCache() {
+        self.dynamicType.regexCache.removeAll()
+    }
 
 	/**
-	 Returns matches for given regex in this string.
+	 Returns matches for given regex in this string. First match returned will
+     be the string matching given pattern.
+     
+     - note: Will cache expressions created.
 
 	 - parameter pattern: Pattern to match in this string.
 
@@ -25,11 +33,14 @@ public extension String {
 	public func matchesForRegex(pattern: String) throws -> [String] {
 
 		let regex: NSRegularExpression
-		if let r = String.regexCache[pattern] {
+		if let r = self.dynamicType.regexCache[pattern] {
 			regex = r
 		} else {
-			regex = try NSRegularExpression(pattern: pattern, options: [.AnchorsMatchLines, .CaseInsensitive])
-			String.regexCache[pattern] = regex
+			regex = try NSRegularExpression(
+                pattern: pattern,
+                options: [.AnchorsMatchLines, .CaseInsensitive]
+            )
+			self.dynamicType.regexCache[pattern] = regex
 		}
 
 		let nsString = self as NSString
@@ -43,6 +54,7 @@ public extension String {
 		return results.flatMap { result in
 			(0..<result.numberOfRanges)
 				.map { result.rangeAtIndex($0) }
+                .filter { $0.length > 0 }
 				.map { nsString.substringWithRange($0) }
 		}
 
