@@ -8,4 +8,10 @@ This is a small collection of utilities to work with strings easily, including:
 - Retrieving regex capture groups.
 - Trimming strings.
 
-It's written in Swift 2.2 and has no additional dependencies.
+## Swift 2.2 & 2.3 support
+
+This library supports both Swift 2.2 and 2.3 up to version `0.0.4` (included) which also supports Swift 3.0.
+
+## Swift 3.0 support
+
+Version `0.0.4` is the first one supporting Swift 3.0 and the latest one supporting older Swift versions. `0.x` versions and discontinued and future features and improvements will be released on `1.x` versions.
