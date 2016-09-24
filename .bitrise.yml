@@ -27,4 +27,6 @@ app:
   - opts:
       is_expand: false
     BITRISE_SCHEME_IOS: StringUtilities-iOS
-    BITRISE_SCHEME_MACOS: StringUtilities-iOS
+  - opts:
+      is_expand: false
+    BITRISE_SCHEME_MACOS: StringUtilities-macOS
