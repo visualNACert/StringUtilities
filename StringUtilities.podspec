@@ -19,11 +19,10 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.10"
 
   s.source       = {
-  	:git => "/Volumes/Soluciones Tecnológicas/Backups/iOS v2/iOS Libs/StringUtilities",
+  	:git => "git@bitbucket.org:vnac/stringutilities.git",
   	:tag => "#{s.version}"
   }
 
   s.source_files  = "Source", "Source/**/*.{h,m,swift}"
-  s.exclude_files = "Source/Exclude"
 
 end
