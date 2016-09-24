@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "StringUtilities"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "A collection of utilities to work with strings"
 
   s.description  = <<-DESC
