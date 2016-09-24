@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.10"
 
   s.source       = {
-  	:git => "git@bitbucket.org:vnac/podsrepo.git",
+  	:git => "git@bitbucket.org:vnac/stringutilities.git",
   	:tag => "#{s.version}"
   }
 
