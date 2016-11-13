@@ -11,9 +11,9 @@ import Foundation
 public extension String {
 
 	public subscript(range: Range<Int>) -> String {
-		let start = self.startIndex.advancedBy(range.startIndex)
-		let end = start.advancedBy(range.endIndex - range.startIndex)
-		return self.substringWithRange(start..<end)
+		let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
+		let end = self.characters.index(start, offsetBy: range.upperBound - range.lowerBound)
+		return self.substring(with: start..<end)
 	}
 
 }

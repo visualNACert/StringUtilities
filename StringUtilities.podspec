@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "StringUtilities"
-  s.version      = "0.0.3"
+  s.version      = "0.1.0"
   s.summary      = "A collection of utilities to work with strings"
 
   # This description is used to generate tags and improve search results.
@@ -139,6 +139,6 @@ Pod::Spec.new do |s|
   #s.preserve_path = "${PODS_ROOT}/VisualAPI/BridgingHeader.h"
   #s.xcconfig = { 'SWIFT_OBJC_BRIDGING_HEADER' => '${PODS_ROOT}/VisualAPI/BridgingHeader.h' }
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency 'CryptoSwift', '~> 0.5.2'
+  s.dependency 'CryptoSwift', '~> 0.6.6'
 
 end

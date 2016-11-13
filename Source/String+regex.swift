@@ -22,28 +22,28 @@ public extension String {
 
 	 - returns: Matches for given regex in this string.
 	 */
-	public func matchesForRegex(pattern: String) throws -> [String] {
+    public func matches(for pattern: String) throws -> [String] {
 
 		let regex: NSRegularExpression
 		if let r = String.regexCache[pattern] {
 			regex = r
 		} else {
-			regex = try NSRegularExpression(pattern: pattern, options: [.AnchorsMatchLines, .CaseInsensitive])
+			regex = try NSRegularExpression(pattern: pattern, options: [.anchorsMatchLines, .caseInsensitive])
 			String.regexCache[pattern] = regex
 		}
 
 		let nsString = self as NSString
 
-		let results = regex.matchesInString(
-			self,
+		let results = regex.matches(
+			in: self,
 			options: [],
 			range: NSMakeRange(0, nsString.length)
 		)
 
 		return results.flatMap { result in
 			(0..<result.numberOfRanges)
-				.map { result.rangeAtIndex($0) }
-				.map { nsString.substringWithRange($0) }
+				.map { result.rangeAt($0) }
+				.map { nsString.substring(with: $0) }
 		}
 
 	}

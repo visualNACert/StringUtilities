@@ -18,8 +18,8 @@ public extension String {
 
 	 - returns: Resulting string.
 	 */
-	public func stringByRemoving(target: String) -> String {
-		return self.stringByReplacingOccurrencesOfString(target, withString: "")
+	public func removing(_ target: String) -> String {
+		return self.replacingOccurrences(of: target, with: "")
 	}
 
 	/**
@@ -30,8 +30,8 @@ public extension String {
 
 	 - returns: Resulting string.
 	 */
-	public func stringByRemoving(targets: [String]) -> String {
-		return targets.reduce(self) { $0.stringByRemoving($1) }
+	public func removing(_ targets: [String]) -> String {
+		return targets.reduce(self) { $0.removing($1) }
 	}
 
 }

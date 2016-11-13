@@ -11,10 +11,10 @@ import Foundation
 public extension String {
 
 	/// Returns a trimmed version of this string.
-	public var trimmedString: String {
+	public var trimmed: String {
 		get {
-			return self.stringByTrimmingCharactersInSet(
-				NSCharacterSet.whitespaceAndNewlineCharacterSet()
+			return self.trimmingCharacters(
+				in: CharacterSet.whitespacesAndNewlines
 			)
 		}
 	}
