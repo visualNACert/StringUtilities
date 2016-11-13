@@ -1,0 +1,18 @@
+
+target 'StringUtilities-iOS' do
+
+	platform :ios, '8.0'
+	use_frameworks!
+
+	pod 'StringUtilities', :path => '../'
+
+end
+
+target 'StringUtilities-macOS' do
+
+	platform :osx, '10.10'
+	use_frameworks!
+
+	pod 'StringUtilities', :path => '../'
+
+end

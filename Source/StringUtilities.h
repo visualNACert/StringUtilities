@@ -1,6 +1,6 @@
 //
 //  StringUtilities.h
-//  Pods
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun on 29/8/16.
 //

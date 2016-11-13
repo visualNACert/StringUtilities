@@ -1,6 +1,6 @@
 //
 //  String+Trim.swift
-//  Visual
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun on 5/8/16.
 //  Copyright © 2016 VisualNACert. All rights reserved.
