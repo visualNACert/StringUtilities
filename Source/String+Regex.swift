@@ -11,7 +11,13 @@ import Foundation
 public extension String {
 
 	/// Cache of regular expressions created.
-	static var regexCache = [String: NSRegularExpression]()
+	fileprivate static var regexCache = [String: NSRegularExpression]()
+
+    /// Clears cache of regular expressions.
+    @available(*, introduced: 0.0.4)
+    public static func clearRegexCache() {
+        self.regexCache.removeAll()
+    }
 
 	/**
 	 Returns matches for given regex in this string.
