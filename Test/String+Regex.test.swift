@@ -15,7 +15,7 @@ class StringRegexTests: XCTestCase {
         
         let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
         
-        XCTAssertThrowsError(try html.matches(forPattern: "<img.*src=\\\"([^\"]*\\\".*\\/>"))
+        XCTAssertThrowsError(try html.matches(for: "<img.*src=\\\"([^\"]*\\\".*\\/>"))
         
     }
     
@@ -24,7 +24,7 @@ class StringRegexTests: XCTestCase {
         let html = "<div id=\"content\">"
         
         guard let matches = try? html.matches(
-            forPattern: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
+            for: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
         ) else {
             XCTFail("Unexpected exception throw using a valid regex")
             return
@@ -39,7 +39,7 @@ class StringRegexTests: XCTestCase {
         let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
         
         guard let matches = try? html.matches(
-            forPattern: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
+            for: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
         ) else {
             XCTFail("Unexpected exception throw using a valid regex")
             return
@@ -56,7 +56,7 @@ class StringRegexTests: XCTestCase {
         let html = "<div id=\"content\">"
             
         guard let matches = try? html.matches(
-            forPattern: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
+            for: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
         ) else {
             XCTFail("Unexpected exception throw using a valid regex")
             return
@@ -71,7 +71,7 @@ class StringRegexTests: XCTestCase {
         let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
 
         guard let matches = try? html.matches(
-            forPattern: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
+            for: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
         ) else {
             XCTFail("Unexpected exception throw using a valid regex")
             return
@@ -108,7 +108,7 @@ class StringRegexTests: XCTestCase {
         
             // Regex should be cached so consecutive iterations should be faster
             guard let matches = try? emailAddress.matches(
-                forPattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+                for: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
             ) else {
                 XCTFail("Unexpected exception throw using a valid regex")
                 return

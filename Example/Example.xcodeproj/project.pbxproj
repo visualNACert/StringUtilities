@@ -164,7 +164,7 @@
 					};
 					13B178B71D96620E00E45A02 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -377,7 +377,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A1FBBC2EC4703DD9194A965 /* Pods-StringUtilities-macOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -428,7 +427,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4135EA581B55C352BF375863 /* Pods-StringUtilities-macOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -471,7 +469,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E029BC12F0295260E4721E3A /* Pods-StringUtilities-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -523,7 +520,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6FD8DFD7F5F1982435A4D77 /* Pods-StringUtilities-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

@@ -12,31 +12,31 @@ import StringUtilities
 class StringTrimTests: XCTestCase {
     
     func testTrimLeft() {
-        XCTAssertEqual("   Base string".trimmedString(), "Base string")
-        XCTAssertEqual(" Base string".trimmedString(), "Base string")
-        XCTAssertEqual("\tBase string".trimmedString(), "Base string")
-        XCTAssertEqual(" \t   Base string".trimmedString(), "Base string")
-        XCTAssertEqual("\nBase string".trimmedString(), "Base string")
+        XCTAssertEqual("   Base string".trimmed, "Base string")
+        XCTAssertEqual(" Base string".trimmed, "Base string")
+        XCTAssertEqual("\tBase string".trimmed, "Base string")
+        XCTAssertEqual(" \t   Base string".trimmed, "Base string")
+        XCTAssertEqual("\nBase string".trimmed, "Base string")
     }
     
     func testTrimRight() {
-        XCTAssertEqual("Base string   ".trimmedString(), "Base string")
-        XCTAssertEqual("Base string ".trimmedString(), "Base string")
-        XCTAssertEqual("Base string\t".trimmedString(), "Base string")
-        XCTAssertEqual("Base string \t ".trimmedString(), "Base string")
-        XCTAssertEqual("Base string\n".trimmedString(), "Base string")
+        XCTAssertEqual("Base string   ".trimmed, "Base string")
+        XCTAssertEqual("Base string ".trimmed, "Base string")
+        XCTAssertEqual("Base string\t".trimmed, "Base string")
+        XCTAssertEqual("Base string \t ".trimmed, "Base string")
+        XCTAssertEqual("Base string\n".trimmed, "Base string")
     }
     
     func testTrimBoth() {
-        XCTAssertEqual("   Base string \t ".trimmedString(), "Base string")
-        XCTAssertEqual(" Base string\t".trimmedString(), "Base string")
-        XCTAssertEqual("\t Base string  ".trimmedString(), "Base string")
-        XCTAssertEqual(" \t    Base string ".trimmedString(), "Base string")
-        XCTAssertEqual("\nBase string".trimmedString(), "Base string")
+        XCTAssertEqual("   Base string \t ".trimmed, "Base string")
+        XCTAssertEqual(" Base string\t".trimmed, "Base string")
+        XCTAssertEqual("\t Base string  ".trimmed, "Base string")
+        XCTAssertEqual(" \t    Base string ".trimmed, "Base string")
+        XCTAssertEqual("\nBase string".trimmed, "Base string")
     }
     
     func testTrimNone() {
-        XCTAssertEqual("Base string".trimmedString(), "Base string")
+        XCTAssertEqual("Base string".trimmed, "Base string")
     }
     
 }
