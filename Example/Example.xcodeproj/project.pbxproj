@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134360771E1A82C200A50930 /* BidirectionalCollection+NaturalJoin.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134360761E1A82C200A50930 /* BidirectionalCollection+NaturalJoin.test.swift */; };
+		134360781E1A843200A50930 /* BidirectionalCollection+NaturalJoin.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134360761E1A82C200A50930 /* BidirectionalCollection+NaturalJoin.test.swift */; };
 		137A7F231D95B37200EE5FA9 /* String+Range.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A7F221D95B37200EE5FA9 /* String+Range.test.swift */; };
 		13B178AF1D95BE1700E45A02 /* String+Regex.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B178AE1D95BE1700E45A02 /* String+Regex.test.swift */; };
 		13B178B11D95BE2A00E45A02 /* String+Remove.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B178B01D95BE2A00E45A02 /* String+Remove.test.swift */; };
@@ -20,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		134360761E1A82C200A50930 /* BidirectionalCollection+NaturalJoin.test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BidirectionalCollection+NaturalJoin.test.swift"; sourceTree = "<group>"; };
 		137A7F191D95B2AB00EE5FA9 /* StringUtilities-macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StringUtilities-macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		137A7F1E1D95B2AB00EE5FA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		137A7F221D95B37200EE5FA9 /* String+Range.test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.test.swift"; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 				13B178AE1D95BE1700E45A02 /* String+Regex.test.swift */,
 				13B178B01D95BE2A00E45A02 /* String+Remove.test.swift */,
 				13B178B21D95BE3700E45A02 /* String+Trim.test.swift */,
+				134360761E1A82C200A50930 /* BidirectionalCollection+NaturalJoin.test.swift */,
 				137A7F1E1D95B2AB00EE5FA9 /* Info.plist */,
 			);
 			name = Tests;
@@ -302,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				137A7F231D95B37200EE5FA9 /* String+Range.test.swift in Sources */,
+				134360771E1A82C200A50930 /* BidirectionalCollection+NaturalJoin.test.swift in Sources */,
 				13B178B31D95BE3700E45A02 /* String+Trim.test.swift in Sources */,
 				13B178B11D95BE2A00E45A02 /* String+Remove.test.swift in Sources */,
 				13B178AF1D95BE1700E45A02 /* String+Regex.test.swift in Sources */,
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B178C01D96622300E45A02 /* String+Range.test.swift in Sources */,
+				134360781E1A843200A50930 /* BidirectionalCollection+NaturalJoin.test.swift in Sources */,
 				13B178C31D96622300E45A02 /* String+Trim.test.swift in Sources */,
 				13B178C21D96622300E45A02 /* String+Remove.test.swift in Sources */,
 				13B178C11D96622300E45A02 /* String+Regex.test.swift in Sources */,

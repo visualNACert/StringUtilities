@@ -18,20 +18,20 @@ extension BidirectionalCollection where Iterator.Element == String, SubSequence.
      
      - parameter separator: Separator to be used between each two elements but
      the last pair.
-     - parameter lastItemSeparator: Separator to be used between last two 
+     - parameter lastElementSeparator: Separator to be used between last two
      elements.
      
      - returns: String with this collection's elements joined.
      */
-    func joined(separator: String, lastItemSeparator: String) -> String {
+    public func joined(separator: String, lastElementSeparator: String) -> String {
         
-        guard let last = self.last else {
+        guard let last = self.last, self.count > 1 else {
             return self.joined(separator: separator)
         }
         
         let allButLast = self.dropLast().joined(separator: separator)
         
-        return "\(allButLast)\(lastItemSeparator)\(last)"
+        return "\(allButLast)\(lastElementSeparator)\(last)"
         
     }
     
