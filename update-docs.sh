@@ -7,9 +7,12 @@ msg() {
     echo "[1;34m> [1;32m$@[0m"
 }
 
+dir="$(pwd)"
+repo_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd "$repo_dir"
 mkdir -p docs
 
-dir="$(pwd)"
 tmp="$(mktemp -d)"
 last_rev="$(git rev-parse HEAD)"
 last_msg="$(git log -1 --pretty=%B)"
@@ -17,10 +20,10 @@ last_msg="$(git log -1 --pretty=%B)"
 trap "cd \"$dir\"; rm -rf \"$tmp\"" EXIT
 
 msg "Cloning into a temporary directory..."
-git clone -qb gh-pages $dir $tmp
+git clone -qb gh-pages $repo_dir $tmp
 cd "$tmp"
 git checkout -q master
-ln -s $dir/docs $tmp/docs
+ln -s $repo_dir/docs $tmp/docs
 
 msg "Installing dependencies..."
 bundle install
