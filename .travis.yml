@@ -11,23 +11,14 @@ env:
   - LANG=en_US.UTF-8
   - WORKSPACE=Example.xcworkspace
   - IOS_SCHEME="Tests-iOS"
-  - IOS_SDK=iphonesimulator10.3
+  - IOS_SDK=iphonesimulator
   - OSX_SCHEME="Tests-macOS"
-  - OSX_SDK=macosx10.12
+  - OSX_SDK=macosx
   matrix:
-    - DESTINATION="OS=8.1,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=8.2,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=8.3,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=8.4,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=9.0,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=9.1,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=9.2,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=9.3,name=iPad Air 2"     SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=10.0,name=iPad Air 2"    SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=10.1,name=iPad Air 2"    SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=10.2,name=iPad Air 2"    SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="OS=10.3,name=iPad Air 2"    SCHEME="$IOS_SCHEME"    SDK="$IOS_SDK"    POD_LINT="NO"
-    - DESTINATION="arch=x86_64"                SCHEME="$OSX_SCHEME"    SDK="$OSX_SDK"    POD_LINT="YES"
+    - DESTINATION="iOS Simulator,name=iPhone 5"    SCHEME="$IOS_SCHEME"  SDK="$IOS_SDK"  POD_LINT="NO"
+    - DESTINATION="iOS Simulator,name=iPad Air 2"  SCHEME="$IOS_SCHEME"  SDK="$IOS_SDK"  POD_LINT="NO"
+    - DESTINATION="iOS Simulator,name=iPhone 6S"   SCHEME="$IOS_SCHEME"  SDK="$IOS_SDK"  POD_LINT="NO"
+    - DESTINATION="arch=x86_64"                    SCHEME="$OSX_SCHEME"  SDK="$OSX_SDK"  POD_LINT="YES"
 
 before_install:
   - bundle install
