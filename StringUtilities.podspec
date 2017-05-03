@@ -13,7 +13,8 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "LGPL2", :file => "LICENSE" }
 
-  s.author       = {
+  s.authors       = {
+    "visualNACert team" => "",
     "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com"
   }
 
