@@ -1,6 +1,6 @@
 //
 //  String+regex.swift
-//  Visual
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun on 6/7/16.
 //  Copyright © 2016 VisualNACert. All rights reserved.
@@ -34,7 +34,10 @@ public extension String {
 		if let r = String.regexCache[pattern] {
 			regex = r
 		} else {
-			regex = try NSRegularExpression(pattern: pattern, options: [.anchorsMatchLines, .caseInsensitive])
+			regex = try NSRegularExpression(
+                pattern: pattern,
+                options: [.anchorsMatchLines, .caseInsensitive]
+            )
 			String.regexCache[pattern] = regex
 		}
 

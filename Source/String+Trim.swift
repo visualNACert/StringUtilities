@@ -12,11 +12,9 @@ public extension String {
 
 	/// Returns a trimmed version of this string.
 	public var trimmed: String {
-		get {
-			return self.trimmingCharacters(
-				in: CharacterSet.whitespacesAndNewlines
-			)
-		}
+        return self.trimmingCharacters(
+            in: CharacterSet.whitespacesAndNewlines
+        )
 	}
 
 }

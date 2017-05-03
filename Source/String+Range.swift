@@ -31,21 +31,28 @@ public extension String {
             "Cannot get substring starting from a < 0 index"
         )
 
-		let start = self.characters.index(self.startIndex, offsetBy: range.lowerBound)
+		let start = self.characters.index(
+            self.startIndex,
+            offsetBy: range.lowerBound
+        )
 
         precondition(
             start < self.endIndex,
             "Desired start index `\(start)` ≥ string length: `\(self.endIndex)`)"
         )
 
-		let end = self.characters.index(start, offsetBy: range.upperBound - range.lowerBound)
-
         precondition(
-            end <= self.endIndex,
-            "Desired end index `\(end)` ≥ string length: `(\(self.endIndex)`)"
+            range.upperBound <= self.characters.count,
+            "Desired end index `\(range.upperBound)` ≥ string length: `(\(self.characters.count)`)"
+        )
+
+		let end = self.characters.index(
+            start,
+            offsetBy: range.upperBound - range.lowerBound
         )
 
 		return self.substring(with: start..<end)
+
 	}
 
 }
