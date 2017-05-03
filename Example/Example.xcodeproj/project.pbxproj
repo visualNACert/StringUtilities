@@ -17,10 +17,8 @@
 		13B178C11D96622300E45A02 /* String+Regex.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B178AE1D95BE1700E45A02 /* String+Regex.test.swift */; };
 		13B178C21D96622300E45A02 /* String+Remove.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B178B01D95BE2A00E45A02 /* String+Remove.test.swift */; };
 		13B178C31D96622300E45A02 /* String+Trim.test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B178B21D95BE3700E45A02 /* String+Trim.test.swift */; };
-		A52F3B828FEFD54C892371F9 /* Pods_StringUtilities_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE10F1FA3B47AA560F688EAB /* Pods_StringUtilities_macOS.framework */; };
-		C8AC35AB02E0BF80154853DC /* Pods_Tests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F88CC8F9B027909BC34A661 /* Pods_Tests_macOS.framework */; };
-		E4A8BABD4892A2FEB121FB56 /* Pods_StringUtilities_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8CF5788CF66243F1E8FB25 /* Pods_StringUtilities_iOS.framework */; };
-		EB66C70EE24743CDE462A930 /* Pods_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C49CB43A4643B8F4BF4D8B /* Pods_Tests_iOS.framework */; };
+		54541400D76DD86DB4F5D84F /* Pods_Tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C49CB43A4643B8F4BF4D8B /* Pods_Tests_iOS.framework */; };
+		9956986BF30BBDD5C2E38827 /* Pods_Tests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F88CC8F9B027909BC34A661 /* Pods_Tests_macOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52F3B828FEFD54C892371F9 /* Pods_StringUtilities_macOS.framework in Frameworks */,
-				C8AC35AB02E0BF80154853DC /* Pods_Tests_macOS.framework in Frameworks */,
+				9956986BF30BBDD5C2E38827 /* Pods_Tests_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4A8BABD4892A2FEB121FB56 /* Pods_StringUtilities_iOS.framework in Frameworks */,
-				EB66C70EE24743CDE462A930 /* Pods_Tests_iOS.framework in Frameworks */,
+				54541400D76DD86DB4F5D84F /* Pods_Tests_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
