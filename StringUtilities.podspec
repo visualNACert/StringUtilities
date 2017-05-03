@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/visualNACert/StringUtilities"
 
-  s.license      = { :type => "Propietary", :file => "LICENSE" }
+  s.license      = { :type => "GPL2", :file => "LICENSE" }
 
   s.author       = {
     "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com"
