@@ -1,4 +1,4 @@
-[![Build Status](https://www.bitrise.io/app/d46e720d40bb06a2.svg?token=1ixdj23dbZJgJ3rjHcqkSg&branch=swift-2)](https://www.bitrise.io/app/d46e720d40bb06a2) ![platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg) ![platform macOS](https://img.shields.io/badge/platform-macOS-blue.svg) ![swift2 compatible 0.0.5](https://img.shields.io/badge/swift2-0.0.5-brightgreen.svg) ![swift3 compatible](https://img.shields.io/badge/swift3-compatible-brightgreen.svg) ![pod 0.0.5](https://img.shields.io/badge/pod-0.0.5-blue.svg)
+[![Build Status](https://travis-ci.org/visualNACert/StringUtilities.svg?branch=master)](https://travis-ci.org/visualNACert/StringUtilities) [![codecov](https://codecov.io/gh/visualNACert/StringUtilities/branch/master/graph/badge.svg)](https://codecov.io/gh/visualNACert/StringUtilities) ![pod platforms](https://img.shields.io/cocoapods/p/StringUtilities.svg) ![pod version](https://img.shields.io/cocoapods/v/StringUtilities.svg) ![pod license](https://img.shields.io/cocoapods/l/StringUtilities.svg)
 
 # String Utilities
 
