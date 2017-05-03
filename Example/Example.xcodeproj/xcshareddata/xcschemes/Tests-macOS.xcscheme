@@ -18,8 +18,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "137A7F181D95B2AB00EE5FA9"
-               BuildableName = "StringUtilities-macOS.xctest"
-               BlueprintName = "StringUtilities-macOS"
+               BuildableName = "Tests-macOS.xctest"
+               BlueprintName = "Tests-macOS"
                ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </TestableReference>

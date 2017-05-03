@@ -1,5 +1,5 @@
 
-target 'StringUtilities-iOS' do
+target 'Tests-iOS' do
 
 	platform :ios, '8.0'
 	use_frameworks!
@@ -9,7 +9,7 @@ target 'StringUtilities-iOS' do
 
 end
 
-target 'StringUtilities-macOS' do
+target 'Tests-macOS' do
 
 	platform :osx, '10.10'
 	use_frameworks!
