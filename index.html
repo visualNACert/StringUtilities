@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StringUtilities  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="StringUtilities  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">StringUtilities Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">StringUtilities Reference</a>
+        <img id="carat" src="img/carat.png" />
+        StringUtilities  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/BidirectionalCollection.html">BidirectionalCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Instance Methods.html">Instance Methods</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Instance Methods.html#/s:Fe15StringUtilitiesRxs23BidirectionalCollectionWx8Iterator7Element_zSSWx11SubSequencePs8Sequence8IteratorS2__zSSrS0_6joinedFT9separatorSS20lastElementSeparatorSS_SS">joined(separator:lastElementSeparator:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Instance Methods.html#/s:FE15StringUtilitiesSS7matchesFzT3forSS_GSaSS_">matches(for:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Instance Methods.html#/s:FE15StringUtilitiesSS8removingFGSaSS_SS">removing(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Instance Methods.html#/s:FE15StringUtilitiesSS8removingFSSSS">removing(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Instance Variables.html">Instance Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Instance Variables.html#/s:vE15StringUtilitiesSS7trimmedSS">trimmed</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Static Variables.html">Static Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Static Variables.html#/s:ZvE15StringUtilitiesSSP33_CADF52EEDB866DFD33F10844AD7C953B10regexCacheGVs10DictionarySSCSo19NSRegularExpression_">regexCache</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Subscripts.html">Subscripts</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Subscripts.html#/s:iE15StringUtilitiesSS9subscriptFGVs5RangeSi_SS">subscript(_:)</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p><a href="https://travis-ci.org/visualNACert/StringUtilities"><img src="https://travis-ci.org/visualNACert/StringUtilities.svg?branch=master" alt="Build Status"></a> <a href="https://codecov.io/gh/visualNACert/StringUtilities"><img src="https://codecov.io/gh/visualNACert/StringUtilities/branch/master/graph/badge.svg" alt="codecov"></a> <img src="https://img.shields.io/cocoapods/p/StringUtilities.svg" alt="pod platforms"> <img src="https://img.shields.io/cocoapods/v/StringUtilities.svg" alt="pod version"> <img src="https://img.shields.io/cocoapods/l/StringUtilities.svg" alt="pod license"></p>
+<h1 id='string-utilities' class='heading'>String Utilities</h1>
+
+<p>This is a small collection of utilities to work with strings easily, including:</p>
+
+<ul>
+<li>Removing multiple occurrences of multiple strings.</li>
+<li>Retrieving regex capture groups.</li>
+<li>Trimming strings.</li>
+</ul>
+<h1 id='api' class='heading'>API</h1>
+<pre class="highlight swift"><code>
+<span class="c1">// Range based subscript...</span>
+<span class="k">let</span> <span class="nv">string</span> <span class="o">=</span> <span class="s">"Lorem ipsum dolor sit amet"</span>
+<span class="k">let</span> <span class="nv">lorem</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="o">..&lt;</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1">// Readable join...</span>
+<span class="k">let</span> <span class="nv">characters</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Obi Wan-Kenobi"</span><span class="p">,</span> <span class="s">"Darth Vader"</span><span class="p">,</span> <span class="s">"Luke Skywalker"</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">characters</span><span class="o">..</span><span class="nf">joined</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">", "</span><span class="p">,</span> <span class="nv">lastElementSeparator</span><span class="p">:</span> <span class="s">" and "</span><span class="p">))</span>
+<span class="c1">// Obi Wan-Kenobi, Darth Vader and Luke Skywalker</span>
+
+<span class="c1">// Remove substrings...</span>
+<span class="k">let</span> <span class="nv">string</span> <span class="o">=</span> <span class="s">"Lorem ipsum dolor sit amet"</span>
+<span class="k">let</span> <span class="nv">withoutLorem</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="nf">removing</span><span class="p">(</span><span class="s">"Lorem"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">withoutVowels</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="nf">removing</span><span class="p">([</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"e"</span><span class="p">,</span> <span class="s">"i"</span><span class="p">,</span> <span class="s">"o"</span><span class="p">,</span> <span class="s">"u"</span><span class="p">])</span>
+
+<span class="c1">// Trim...</span>
+<span class="k">let</span> <span class="nv">string</span> <span class="o">=</span> <span class="s">"Lorem ipsum dolor sit amet   "</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">trimmed</span><span class="p">)</span> <span class="c1">// Lorem ipsum dolor sit amet</span>
+
+<span class="c1">// Regex...</span>
+<span class="k">let</span> <span class="nv">html</span> <span class="o">=</span> <span class="s">"&lt;img src=</span><span class="se">\"</span><span class="s">image_src</span><span class="se">\"</span><span class="s"> title=</span><span class="se">\"</span><span class="s">An image</span><span class="se">\"</span><span class="s"> alt=</span><span class="se">\"</span><span class="s">Some text</span><span class="se">\"</span><span class="s"> /&gt;"</span>
+
+<span class="k">let</span> <span class="nv">matches</span> <span class="o">=</span> <span class="k">try!</span> <span class="n">html</span><span class="o">.</span><span class="nf">matches</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="s">"&lt;img.*src=</span><span class="se">\\\"</span><span class="s">([^</span><span class="se">\"</span><span class="s">]*)</span><span class="se">\\\"</span><span class="s">.*</span><span class="se">\\</span><span class="s">/&gt;"</span><span class="p">)</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">// &lt;img src="image_src" title="An image" alt="Some text" /&gt;</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">matches</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">// image_src</span>
+
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/visualNACert/StringUtilities" target="_blank" rel="external">Lluís Ulzurrun de Asanza i Sàez</a>. All rights reserved. (Last updated: 2017-05-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
