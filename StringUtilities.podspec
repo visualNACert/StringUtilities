@@ -9,15 +9,19 @@ Pod::Spec.new do |s|
   trimming methods
   DESC
 
+  s.homepage     = "https://github.com/visualNACert/StringUtilities"
+
   s.license      = { :type => "Propietary", :file => "LICENSE" }
 
-  s.author.      = { "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com" }
+  s.author       = {
+    "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com"
+  }
 
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.10"
 
   s.source       = {
-  	:git => "git@bitbucket.org:vnac/stringutilities.git",
+  	:git => "https://github.com/visualNACert/StringUtilities.git",
   	:tag => "#{s.version}"
   }
 
