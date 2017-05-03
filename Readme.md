@@ -8,10 +8,34 @@ This is a small collection of utilities to work with strings easily, including:
 - Retrieving regex capture groups.
 - Trimming strings.
 
-## Swift 2.2 & 2.3 support
+# API
 
-This library supports both Swift 2.2 and 2.3 up to version `0.0.5` (included) which also supports Swift 3.0.
+```swift
 
-## Swift 3.0 support
+// Range based subscript...
+let string = "Lorem ipsum dolor sit amet"
+let lorem = string[0..<5]
 
-Version `0.0.5` is the first one supporting Swift 3.0 and the latest one supporting older Swift versions. `0.x` versions and discontinued and future features and improvements will be released on `1.x` versions.
+// Readable join...
+let characters = ["Obi Wan-Kenobi", "Darth Vader", "Luke Skywalker"]
+print(characters..joined(separator: ", ", lastElementSeparator: " and "))
+// Obi Wan-Kenobi, Darth Vader and Luke Skywalker
+
+// Remove substrings...
+let string = "Lorem ipsum dolor sit amet"
+let withoutLorem = string.removing("Lorem")
+let withoutVowels = string.removing(["a", "e", "i", "o", "u"])
+
+// Trim...
+let string = "Lorem ipsum dolor sit amet   "
+print(string.trimmed) // Lorem ipsum dolor sit amet
+
+// Regex...
+let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
+
+let matches = try! html.matches(for: "<img.*src=\\\"([^\"]*)\\\".*\\/>")
+
+print(matches[0]) // <img src="image_src" title="An image" alt="Some text" />
+print(matches[1]) // image_src
+
+```
