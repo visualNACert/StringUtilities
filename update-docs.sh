@@ -7,6 +7,8 @@ msg() {
     echo "[1;34m> [1;32m$@[0m"
 }
 
+mkdir -p docs
+
 dir="$(pwd)"
 tmp="$(mktemp -d)"
 last_rev="$(git rev-parse HEAD)"
