@@ -1,6 +1,6 @@
 //
 //  String+Remove.test.swift
-//  Example
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun de Asanza Sàez on 23/9/16.
 //
@@ -8,78 +8,79 @@
 
 import XCTest
 import StringUtilities
+import Nimble
 
 class StringRemoveTests: XCTestCase {
-    
-    func testRemoveNotFoundSubstring() {
-        
-        let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
-        
-        let resulting = original.removing("hitchhiker")
-        
-        XCTAssertEqual(original, resulting)
 
-        
-    }
-    
-    func testRemoveAppearingOnlyOnceSubstring() {
-        
+    func test__remove_not_found_substring() {
+
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
-        
+
+        let resulting = original.removing("hitchhiker")
+
+        expect(original).to(equal(resulting))
+
+
+    }
+
+    func test__remove_appearing_only_once_substring() {
+
+        let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
+
         let resulting = original.removing("moment")
-        
-        XCTAssertEqual(resulting, "For a , nothing happened. Then, after a second or so, nothing continued to happen.")
-        
+
+        expect(resulting).to(equal("For a , nothing happened. Then, after a second or so, nothing continued to happen."))
+
     }
-    
-    func testRemoveAppearingMultipleTimesSubstring() {
-        
+
+    func test__remove_appearing_multiple_times_substring() {
+
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
-    
+
         let resulting = original.removing("nothing")
-        
-        XCTAssertEqual(resulting, "For a moment,  happened. Then, after a second or so,  continued to happen.")
-        
+
+        expect(resulting).to(equal("For a moment,  happened. Then, after a second or so,  continued to happen."))
+
     }
-    
-    func testRemoveNotFoundSubstrings() {
-     
+
+    func test__remove_not_found_substrings() {
+
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
-        
+
         let resulting = original.removing(["Douglas", "Adams"])
-        
-        XCTAssertEqual(original, resulting)
-        
+
+        expect(original).to(equal(resulting))
+
     }
-    
-    func testRemoveOneFoundOtherNotSubstrings() {
-        
+
+    func test__remove_one_found_other_not_substrings() {
+
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
-        
+
         let resulting = original.removing(["Arthur", "moment"])
-        
-        XCTAssertEqual(resulting, "For a , nothing happened. Then, after a second or so, nothing continued to happen.")
-        
+
+        expect(resulting).to(equal("For a , nothing happened. Then, after a second or so, nothing continued to happen."))
+
     }
-    
-    func testRemoveAppearingOnlyOnceSubstrings() {
-        
+
+    func test__remove_appearing_only_once_substrings() {
+
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
-        
+
         let resulting = original.removing(["Then", "moment"])
-        
-        XCTAssertEqual(resulting, "For a , nothing happened. , after a second or so, nothing continued to happen.")
-        
+
+        expect(resulting).to(equal("For a , nothing happened. , after a second or so, nothing continued to happen."))
+
     }
-    
-    func testRemoveAppearingMultipleTimesSubstrings() {
-        
+
+    func test__remove_appearing_multiple_times_substrings() {
+
         let original = "For a moment, nothing happened. Then, after a second or so, nothing continued to happen."
-        
+
         let resulting = original.removing(["nothing", ","])
-        
-        XCTAssertEqual(resulting, "For a moment  happened. Then after a second or so  continued to happen.")
-        
+
+        expect(resulting).to(equal("For a moment  happened. Then after a second or so  continued to happen."))
+
     }
-    
+
 }

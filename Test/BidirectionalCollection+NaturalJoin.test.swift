@@ -1,6 +1,6 @@
 //
 //  BidirectionalCollection+NaturalJoin.test.swift
-//  Example
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun de Asanza Sàez on 2/1/17.
 //
@@ -8,35 +8,32 @@
 
 import XCTest
 import StringUtilities
+import Nimble
 
 class NaturalJoinTests: XCTestCase {
-    
-    func testEmpty() {
-        XCTAssertEqual(    
-            [String]().joined(separator: ", ", lastElementSeparator: " and "),
-            ""
-        )
+
+    func test__empty() {
+        expect(
+            [String]().joined(separator: ", ", lastElementSeparator: " and ")
+        ).to(equal(""))
     }
-    
-    func testOne() {
-        XCTAssertEqual(
-            ["one"].joined(separator: ", ", lastElementSeparator: " and "),
-            "one"
-        )
+
+    func test__one() {
+        expect(
+            ["one"].joined(separator: ", ", lastElementSeparator: " and ")
+        ).to(equal("one"))
     }
-    
-    func testTwo() {
-        XCTAssertEqual(
-            ["one", "two"].joined(separator: ", ", lastElementSeparator: " and "),
-            "one and two"
-        )
+
+    func test__two() {
+        expect(
+            ["one", "two"].joined(separator: ", ", lastElementSeparator: " and ")
+        ).to(equal("one and two"))
     }
-    
-    func testThree() {
-        XCTAssertEqual(
-            ["one", "two", "three"].joined(separator: ", ", lastElementSeparator: " and "),
-            "one, two and three"
-        )
+
+    func test__three() {
+        expect(
+            ["one", "two", "three"].joined(separator: ", ", lastElementSeparator: " and ")
+        ).to(equal("one, two and three"))
     }
-    
+
 }

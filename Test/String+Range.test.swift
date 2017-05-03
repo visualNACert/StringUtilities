@@ -1,6 +1,6 @@
 //
 //  String+Range.test.swift
-//  StringUtilities-macOS
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun de Asanza Sàez on 23/9/16.
 //
@@ -8,45 +8,54 @@
 
 import XCTest
 import StringUtilities
+import Nimble
 
 class StringRangeTests: XCTestCase {
-    
-    func testOneCharacterSubstring() {
-        
+
+    func test__preconditions() {
+
+        expect { _ = "A"[-1..<1] }.to(throwAssertion())
+        expect { _ = "A"[0..<2] }.to(throwAssertion())
+        expect { _ = "A"[1..<2] }.to(throwAssertion())
+
+    }
+
+    func test__one_character_substring() {
+
         // One character substring in multiple characters string...
-        XCTAssertEqual("So long and thanks for all the fish"[0..<1], "S")
-        XCTAssertEqual("So long and thanks for all the fish"[1..<2], "o")
-        XCTAssertEqual("So long and thanks for all the fish"[2..<3], " ")
-        XCTAssertEqual("So long and thanks for all the fish"[34..<35], "h")
-        
+        expect("So long and thanks for all the fish"[0..<1]).to(equal("S"))
+        expect("So long and thanks for all the fish"[1..<2]).to(equal("o"))
+        expect("So long and thanks for all the fish"[2..<3]).to(equal(" "))
+        expect("So long and thanks for all the fish"[34..<35]).to(equal("h"))
+
         // One character substring in a single character string...
-        XCTAssertEqual("A"[0..<1], "A")
-        
+        expect("A"[0..<1]).to(equal("A"))
+
     }
-    
-    func testMultipleCharactersSubstring() {
-        
+
+    func test__multiple_characters_substring() {
+
         // Multiple characters substring in multiple characters string...
-        XCTAssertEqual("So long and thanks for all the fish"[0..<2], "So")
-        XCTAssertEqual("So long and thanks for all the fish"[3..<7], "long")
-        XCTAssertEqual("So long and thanks for all the fish"[8..<11], "and")
-        XCTAssertEqual("So long and thanks for all the fish"[31..<35], "fish")
-        
+        expect("So long and thanks for all the fish"[0..<2]).to(equal("So"))
+        expect("So long and thanks for all the fish"[3..<7]).to(equal("long"))
+        expect("So long and thanks for all the fish"[8..<11]).to(equal("and"))
+        expect("So long and thanks for all the fish"[31..<35]).to(equal("fish"))
+
     }
-    
-    func testEmptySubstring() {
-        
+
+    func test__empty_substring() {
+
         // Empty substring in multiple characters string...
-        XCTAssertEqual("So long and thanks for all the fish"[0..<0], "")
-        XCTAssertEqual("So long and thanks for all the fish"[1..<1], "")
-        XCTAssertEqual("So long and thanks for all the fish"[2..<2], "")
-        
+        expect("So long and thanks for all the fish"[0..<0]).to(equal(""))
+        expect("So long and thanks for all the fish"[1..<1]).to(equal(""))
+        expect("So long and thanks for all the fish"[2..<2]).to(equal(""))
+
         // Empty substring in single character string...
-        XCTAssertEqual("A"[0..<0], "")
-        
+        expect("A"[0..<0]).to(equal(""))
+
         // Empty substring in empty string...
-        XCTAssertEqual("So long and thanks for all the fish"[0..<0], "")
-        
+        expect("So long and thanks for all the fish"[0..<0]).to(equal(""))
+
     }
-    
+
 }

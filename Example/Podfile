@@ -5,6 +5,7 @@ target 'StringUtilities-iOS' do
 	use_frameworks!
 
 	pod 'StringUtilities', :path => '../'
+	pod 'Nimble', '~> 7.0.0'
 
 end
 
@@ -14,5 +15,6 @@ target 'StringUtilities-macOS' do
 	use_frameworks!
 
 	pod 'StringUtilities', :path => '../'
+	pod 'Nimble', '~> 7.0.0'
 
 end

@@ -1,6 +1,6 @@
 //
 //  String+Regex.test.swift
-//  Example
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun de Asanza Sàez on 23/9/16.
 //
@@ -8,117 +8,152 @@
 
 import XCTest
 import StringUtilities
+import Nimble
 
 class StringRegexTests: XCTestCase {
-    
-    func testThrowsOnMalformedRegex() {
-        
-        let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
-        
-        XCTAssertThrowsError(try html.matches(for: "<img.*src=\\\"([^\"]*\\\".*\\/>"))
-        
-    }
-    
-    func testNonExistingOneCaptureGroup() {
-        
-        let html = "<div id=\"content\">"
-        
-        guard let matches = try? html.matches(
-            for: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
-        ) else {
-            XCTFail("Unexpected exception throw using a valid regex")
-            return
-        }
-        
-        XCTAssertEqual(matches.count, 0)
-        
-    }
-    
-    func testOneCaptureGroup() {
-        
-        let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
-        
-        guard let matches = try? html.matches(
-            for: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
-        ) else {
-            XCTFail("Unexpected exception throw using a valid regex")
-            return
-        }
-            
-        XCTAssertEqual(matches.count, 2)
-        XCTAssertEqual(matches[0], html)
-        XCTAssertEqual(matches[1], "image_src")
-        
-    }
-    
-    func testNonExistingMultipleCaptureGroups() {
-        
-        let html = "<div id=\"content\">"
-            
-        guard let matches = try? html.matches(
-            for: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
-        ) else {
-            XCTFail("Unexpected exception throw using a valid regex")
-            return
-        }
-            
-        XCTAssertEqual(matches.count, 0)
-        
-    }
-    
-    func testMultipleCaptureGroupsGreedy() {
-        
+
+    func test__throws_on_malformed_regex() {
+
         let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
 
-        guard let matches = try? html.matches(
-            for: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
-        ) else {
-            XCTFail("Unexpected exception throw using a valid regex")
-            return
-        }
-            
-        XCTAssertEqual(matches.count, 4)
-        XCTAssertEqual(matches[0], html)
-        XCTAssertEqual(matches[1], "image_src")
-        XCTAssertEqual(matches[2], "Some text")
-        XCTAssertEqual(matches[3], "An image")
-        
+        expect {
+            _ = try html.matches(for: "<img.*src=\\\"([^\"]*\\\".*\\/>")
+        }.to(throwError())
+
     }
-    
-    func testPerformance() {
-        
+
+    func test__non_existing_one_capture_group() {
+
+        let html = "<div id=\"content\">"
+
+        expect { _ -> Void in
+
+            let matches = try html.matches(
+                for: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
+            )
+
+            expect(matches).to(haveCount(0))
+
+        }.toNot(throwAssertion())
+
+    }
+
+    func test__one_capture_group() {
+
+        let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
+
+        expect { _ -> Void in
+
+            let matches = try html.matches(
+                for: "<img.*src=\\\"([^\"]*)\\\".*\\/>"
+            )
+
+            expect(matches).to(haveCount(2))
+            expect(matches[0]).to(equal(html))
+            expect(matches[1]).to(equal("image_src"))
+
+        }.toNot(throwAssertion())
+
+    }
+
+    func test__non_existing_multiple_capture_groups() {
+
+        let html = "<div id=\"content\">"
+
+        expect { _ -> Void in
+
+            let matches = try html.matches(
+                for: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
+            )
+
+            expect(matches).to(haveCount(0))
+
+        }.toNot(throwAssertion())
+
+    }
+
+    func test__multiple_capture_groups_greedy() {
+
+        let html = "<img src=\"image_src\" title=\"An image\" alt=\"Some text\" />"
+
+        expect { _ -> Void in
+
+            let matches = try html.matches(
+                for: "<img\\s(?:(?:src=\\\"([^\"]*)\\\"|alt=\\\"([^\"]*)\\\"|title=\\\"([^\"]*)\\\")\\s)+\\/>"
+            )
+
+            expect(matches).to(haveCount(4))
+
+            expect(matches[0]).to(equal(html))
+            expect(matches[1]).to(equal("image_src"))
+            expect(matches[2]).to(equal("Some text"))
+            expect(matches[3]).to(equal("An image"))
+
+        }.toNot(throwAssertion())
+
+    }
+
+    func test__performance_uncached() {
+
         let emailAddress = "someone@somedomain.com"
-        
-        // TODO: Properly measure cache impact...
-        /* 
-         We should be measuring cache impact with something like this:
-         
-         1. Repeat X times:
-            1. Clear cache.
-            2. Measure one run.
-         2. Get average runtime of step 2.1 runs.
-         3. Measure X runs.
-         4. Get average runtime of step 3 runs.
-         5. Average of step 4 should be lower than average of step 2.
-         */
-        
-        String.clearRegexCache()
-        
-        measure {
-        
-            // Regex should be cached so consecutive iterations should be faster
-            guard let matches = try? emailAddress.matches(
-                for: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-            ) else {
-                XCTFail("Unexpected exception throw using a valid regex")
-                return
-            }
-                
-            XCTAssertEqual(matches.count, 1)
-            XCTAssertEqual(matches[0], emailAddress)
-            
+
+        let test: (Void) -> Void = { _ -> Void in
+
+            expect { _ -> Void in
+
+                // Regex should be cached so consecutive iterations should be
+                // faster
+                let matches = try emailAddress.matches(
+                    for: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+                )
+
+                expect(matches).to(haveCount(1))
+                expect(matches[0]).to(equal(emailAddress))
+
+                }.toNot(throwAssertion())
+
         }
-        
+
+        String.clearRegexCache()
+
+        measure {
+            test()
+            String.clearRegexCache()
+        }
+
+        String.clearRegexCache()
+
+    }
+
+    func test__performance_cached() {
+
+        let emailAddress = "someone@somedomain.com"
+
+        let test: (Void) -> Void = { _ -> Void in
+
+            expect { _ -> Void in
+
+                // Regex should be cached so consecutive iterations should be
+                // faster
+                let matches = try emailAddress.matches(
+                    for: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+                )
+
+                expect(matches).to(haveCount(1))
+                expect(matches[0]).to(equal(emailAddress))
+
+            }.toNot(throwAssertion())
+
+        }
+
+        String.clearRegexCache()
+
+        test()
+
+        measure { test() }
+
+        String.clearRegexCache()
+
     }
 
 }

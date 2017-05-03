@@ -1,6 +1,6 @@
 //
 //  String+Trim.test.swift
-//  Example
+//  StringUtilities
 //
 //  Created by Lluís Ulzurrun de Asanza Sàez on 23/9/16.
 //
@@ -8,35 +8,36 @@
 
 import XCTest
 import StringUtilities
+import Nimble
 
 class StringTrimTests: XCTestCase {
-    
-    func testTrimLeft() {
-        XCTAssertEqual("   Base string".trimmed, "Base string")
-        XCTAssertEqual(" Base string".trimmed, "Base string")
-        XCTAssertEqual("\tBase string".trimmed, "Base string")
-        XCTAssertEqual(" \t   Base string".trimmed, "Base string")
-        XCTAssertEqual("\nBase string".trimmed, "Base string")
+
+    func test__trim_left() {
+        expect("   Base string".trimmed).to(equal("Base string"))
+        expect(" Base string".trimmed).to(equal("Base string"))
+        expect("\tBase string".trimmed).to(equal("Base string"))
+        expect(" \t   Base string".trimmed).to(equal("Base string"))
+        expect("\nBase string".trimmed).to(equal("Base string"))
     }
-    
-    func testTrimRight() {
-        XCTAssertEqual("Base string   ".trimmed, "Base string")
-        XCTAssertEqual("Base string ".trimmed, "Base string")
-        XCTAssertEqual("Base string\t".trimmed, "Base string")
-        XCTAssertEqual("Base string \t ".trimmed, "Base string")
-        XCTAssertEqual("Base string\n".trimmed, "Base string")
+
+    func test__trim_right() {
+        expect("Base string   ".trimmed).to(equal("Base string"))
+        expect("Base string ".trimmed).to(equal("Base string"))
+        expect("Base string\t".trimmed).to(equal("Base string"))
+        expect("Base string \t ".trimmed).to(equal("Base string"))
+        expect("Base string\n".trimmed).to(equal("Base string"))
     }
-    
-    func testTrimBoth() {
-        XCTAssertEqual("   Base string \t ".trimmed, "Base string")
-        XCTAssertEqual(" Base string\t".trimmed, "Base string")
-        XCTAssertEqual("\t Base string  ".trimmed, "Base string")
-        XCTAssertEqual(" \t    Base string ".trimmed, "Base string")
-        XCTAssertEqual("\nBase string".trimmed, "Base string")
+
+    func test__trim_both() {
+        expect("   Base string \t ".trimmed).to(equal("Base string"))
+        expect(" Base string\t".trimmed).to(equal("Base string"))
+        expect("\t Base string  ".trimmed).to(equal("Base string"))
+        expect(" \t    Base string ".trimmed).to(equal("Base string"))
+        expect("\nBase string".trimmed).to(equal("Base string"))
     }
-    
-    func testTrimNone() {
-        XCTAssertEqual("Base string".trimmed, "Base string")
+
+    func test__trim_bone() {
+        expect("Base string".trimmed).to(equal("Base string"))
     }
-    
+
 }
