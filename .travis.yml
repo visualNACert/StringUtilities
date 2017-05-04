@@ -15,10 +15,26 @@ env:
   - OSX_SCHEME="Tests-macOS"
   - OSX_SDK=macosx
   matrix:
-    - DESTINATION="iOS Simulator,name=iPhone 5"    SCHEME="$IOS_SCHEME"  SDK="$IOS_SDK"  POD_LINT="NO"
-    - DESTINATION="iOS Simulator,name=iPad Air 2"  SCHEME="$IOS_SCHEME"  SDK="$IOS_SDK"  POD_LINT="NO"
-    - DESTINATION="iOS Simulator,name=iPhone 6S"   SCHEME="$IOS_SCHEME"  SDK="$IOS_SDK"  POD_LINT="NO"
-    - DESTINATION="arch=x86_64"                    SCHEME="$OSX_SCHEME"  SDK="$OSX_SDK"  POD_LINT="YES"
+    - env:
+      - DESTINATION="platform=iOS Simulator,name=iPhone 5"
+      - SCHEME="$IOS_SCHEME"
+      - SDK="$IOS_SDK"
+      - POD_LINT="NO"
+    - env:
+      - DESTINATION="platform=iOS Simulator,name=iPad Air 2"
+      - SCHEME="$IOS_SCHEME"
+      - SDK="$IOS_SDK"
+      - POD_LINT="NO"
+    - env:
+      - DESTINATION="platform=iOS Simulator,name=iPhone 6S"
+      - SCHEME="$IOS_SCHEME"
+      - SDK="$IOS_SDK"
+      - POD_LINT="NO"
+    - env:
+      - DESTINATION="arch=x86_64"
+      - SCHEME="$OSX_SCHEME"
+      - SDK="$OSX_SDK"
+      - POD_LINT="YES"
 
 before_install:
   - bundle install
