@@ -29,7 +29,12 @@ msg "Installing dependencies..."
 bundle install
 
 msg "Generating documentation..."
-bundle exec jazzy --podspec StringUtilities.podspec
+bundle exec jazzy \
+	--podspec StringUtilities.podspec \
+	--theme fullwidth \
+	--github_url https://github.com/visualNACert/StringUtilities/ \
+	--root-url https://visualnacert.github.io/StringUtilities/ \
+	--dash-url https://visualnacert.github.io/StringUtilities/docsets/StringUtilities.xml
 
 # Switch to pages
 msg "Replacing documentation..."

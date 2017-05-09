@@ -9,11 +9,12 @@ Pod::Spec.new do |s|
   trimming methods
   DESC
 
-  s.homepage     = "https://github.com/visualNACert/StringUtilities"
+  s.homepage          = "https://github.com/visualNACert/StringUtilities"
+  s.documentation_url = "https://visualnacert.github.io/GeometryUtilities"
 
   s.license      = { :type => "LGPL2", :file => "LICENSE" }
 
-  s.authors       = {
+  s.authors      = {
     "visualNACert team" => "",
     "Lluís Ulzurrun de Asanza i Sàez" => "lulzurrun@visualnacert.com"
   }
