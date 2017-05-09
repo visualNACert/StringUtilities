@@ -4,92 +4,125 @@
     <title>Instance Variables  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
+
+
     <a title="Instance Variables  Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p><a href="index.html">StringUtilities Docs</a> (100% documented)</p>
-      </div>
-    </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="index.html">StringUtilities Reference</a>
-        <img id="carat" src="img/carat.png" />
-        Instance Variables  Reference
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          StringUtilities Docs
+        </a>
+         (100% documented)
       </p>
-    </div>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/visualNACert/StringUtilities/">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="dash-feed://https%3A%2F%2Fvisualnacert%2Egithub%2Eio%2FStringUtilities%2Fdocsets%2FStringUtilities%2Edocset">
+            <img class="header-icon" src="img/dash.png"/>
+            Install in Dash
+          </a>
+        </p>
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">StringUtilities Reference</a>
+      <img class="carat" src="img/carat.png" />
+      Instance Variables  Reference
+    </p>
+
     <div class="content-wrapper">
-      <nav class="sidebar">
+      <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a href="Extensions.html">Extensions</a>
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Extensions/BidirectionalCollection.html">BidirectionalCollection</a>
+                <a class="nav-group-task-link" href="Extensions/BidirectionalCollection.html">BidirectionalCollection</a>
               </li>
               <li class="nav-group-task">
-                <a href="Extensions/String.html">String</a>
+                <a class="nav-group-task-link" href="Extensions/String.html">String</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Instance Methods.html">Instance Methods</a>
+            <a class="nav-group-name-link" href="Instance Methods.html">Instance Methods</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Instance Methods.html#/s:Fe15StringUtilitiesRxs23BidirectionalCollectionWx8Iterator7Element_zSSWx11SubSequencePs8Sequence8IteratorS2__zSSrS0_6joinedFT9separatorSS20lastElementSeparatorSS_SS">joined(separator:lastElementSeparator:)</a>
+                <a class="nav-group-task-link" href="Instance Methods.html#/s:Fe15StringUtilitiesRxs23BidirectionalCollectionWx8Iterator7Element_zSSWx11SubSequencePs8Sequence8IteratorS2__zSSrS0_6joinedFT9separatorSS20lastElementSeparatorSS_SS">joined(separator:lastElementSeparator:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Instance Methods.html#/s:FE15StringUtilitiesSS7matchesFzT3forSS_GSaSS_">matches(for:)</a>
+                <a class="nav-group-task-link" href="Instance Methods.html#/s:FE15StringUtilitiesSS7matchesFzT3forSS_GSaSS_">matches(for:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Instance Methods.html#/s:FE15StringUtilitiesSS8removingFGSaSS_SS">removing(_:)</a>
+                <a class="nav-group-task-link" href="Instance Methods.html#/s:FE15StringUtilitiesSS8removingFGSaSS_SS">removing(_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Instance Methods.html#/s:FE15StringUtilitiesSS8removingFSSSS">removing(_:)</a>
+                <a class="nav-group-task-link" href="Instance Methods.html#/s:FE15StringUtilitiesSS8removingFSSSS">removing(_:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Instance Variables.html">Instance Variables</a>
+            <a class="nav-group-name-link" href="Instance Variables.html">Instance Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Instance Variables.html#/s:vE15StringUtilitiesSS7trimmedSS">trimmed</a>
+                <a class="nav-group-task-link" href="Instance Variables.html#/s:vE15StringUtilitiesSS7trimmedSS">trimmed</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Static Variables.html">Static Variables</a>
+            <a class="nav-group-name-link" href="Static Variables.html">Static Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Static Variables.html#/s:ZvE15StringUtilitiesSSP33_CADF52EEDB866DFD33F10844AD7C953B10regexCacheGVs10DictionarySSCSo19NSRegularExpression_">regexCache</a>
+                <a class="nav-group-task-link" href="Static Variables.html#/s:ZvE15StringUtilitiesSSP33_CADF52EEDB866DFD33F10844AD7C953B10regexCacheGVs10DictionarySSCSo19NSRegularExpression_">regexCache</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Subscripts.html">Subscripts</a>
+            <a class="nav-group-name-link" href="Subscripts.html">Subscripts</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Subscripts.html#/s:iE15StringUtilitiesSS9subscriptFGVs5RangeSi_SS">subscript(_:)</a>
+                <a class="nav-group-task-link" href="Subscripts.html#/s:iE15StringUtilitiesSS9subscriptFGVs5RangeSi_SS">subscript(_:)</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
       <article class="main-content">
-        <section>
-          <section class="section">
+
+        <section class="section">
+          <div class="section-content">
             <h1>Instance Variables</h1>
             <p>The following instance variables are available globally.</p>
 
-          </section>
-          <section class="section task-group-section">
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
             <div class="task-group">
-              <ul>
+              <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
@@ -119,14 +152,15 @@
                 </li>
               </ul>
             </div>
-          </section>
+          </div>
         </section>
-        <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/visualNACert/StringUtilities" target="_blank" rel="external">visualNACert team and Lluís Ulzurrun de Asanza i Sàez</a>. All rights reserved. (Last updated: 2017-05-04)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
-        </section>
+
       </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2017 <a class="link" href="https://github.com/visualNACert/StringUtilities" target="_blank" rel="external">visualNACert team and Lluís Ulzurrun de Asanza i Sàez</a>. All rights reserved. (Last updated: 2017-05-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>
